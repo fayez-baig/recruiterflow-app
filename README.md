@@ -1,6 +1,6 @@
 # CRA multi-purpose template developed by NextGenDev discord mentors
 
-##### Technology used: `React 17`, `TypeScript 4`, `TailwindCSS 3`, `React-Query 3`,
+##### Technology used: `React 18`, `TypeScript 4`, `TailwindCSS 3`, `React-Query 3`,
 
 ## Installation
 
