@@ -25,24 +25,29 @@ const Modal: FC<ModalProps> = ({ toggle, children, handleSave }) => {
                     aria-labelledby="modal-headline"
                 >
                     <div className="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                        <div className="items-center sm:flex sm:items-start">
-                            <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 mx-auto rounded-full sm:mx-0 sm:h-10 sm:w-10">
-                                📝
+                        <div className="flex flex-col items-center sm:flex sm:items-start">
+                            <div className="flex items-center justify-center">
+                                📝 <span className="ml-4"> Contact Form</span>
                             </div>
-                            <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                            <div className="mt-1 ml-8 text-center sm:mt-1 sm:ml-8 sm:text-left">
                                 {children}
                             </div>
                         </div>
                     </div>
                     <div className="px-4 py-1 pb-3 sm:px-6 sm:flex sm:flex-row-reverse">
                         <Button
+                            type="submit"
                             className="sm:flex sm:w-auto"
                             onClick={() => {
-                                toggle();
                                 handleSave?.();
+                                toggle();
                             }}
                         >
                             Save
+                        </Button>
+
+                        <Button className="mr-7 sm:flex sm:w-auto" onClick={toggle}>
+                            Cancel
                         </Button>
                     </div>
                 </div>

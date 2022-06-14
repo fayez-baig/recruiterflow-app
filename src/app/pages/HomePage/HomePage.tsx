@@ -1,4 +1,4 @@
-import { Modal } from 'app/domains/Common/components/modal';
+import FormContainer from 'app/domains/Common/components/form-container/FormContainer';
 import { Button } from 'app/domains/Common/components/ui';
 import { FC, useState } from 'react';
 
@@ -12,7 +12,7 @@ const HomePage: FC = () => {
             >
                 ➕
             </Button>
-            {showModal && <Modal toggle={() => setShowModal((prev) => !prev)}>Contact form</Modal>}
+            <FormContainer showModal={showModal} toggle={() => setShowModal((prev) => !prev)} />
         </>
     );
 };
