@@ -38,10 +38,7 @@ const Modal: FC<ModalProps> = ({ toggle, children, handleSave }) => {
                         <Button
                             type="submit"
                             className="sm:flex sm:w-auto"
-                            onClick={() => {
-                                handleSave?.();
-                                toggle();
-                            }}
+                            onClick={() => handleSave?.()}
                         >
                             Save
                         </Button>

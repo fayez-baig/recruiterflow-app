@@ -17,6 +17,7 @@ const Input: FC<InputProps> = ({
     withIcon,
     onKeyUp,
     onChange,
+    error,
 }) => {
     const input = (
         <>
@@ -36,6 +37,8 @@ const Input: FC<InputProps> = ({
                 onChange={onChange}
                 onKeyUp={onKeyUp}
             />
+
+            {error && <span className="mt-1 text-red-500">{error}</span>}
         </>
     );
 

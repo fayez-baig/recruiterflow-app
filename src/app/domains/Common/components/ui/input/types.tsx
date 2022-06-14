@@ -6,7 +6,7 @@ export interface InputProps {
     label?: string;
     name?: string;
     id?: string;
-    value?: string;
+    value?: string | number;
     list?: string;
     type?: InputType;
     onChange?: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
@@ -18,4 +18,5 @@ export interface InputProps {
     readonly?: boolean;
     icon?: ReactNode;
     withIcon?: boolean;
+    error?: string;
 }

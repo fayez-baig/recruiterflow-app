@@ -1,22 +1,10 @@
 import { FC } from 'react';
 import { Input } from '../ui';
 import { FormProps } from './types';
+import { handleValidate } from 'utils/validation';
+import { formFields } from 'utils/formFields';
 
-const formFields = [
-    {
-        label: 'Name',
-        name: 'fullName',
-        placeHolder: 'Enter Your Name',
-    },
-
-    {
-        label: 'Contact No',
-        name: 'contactNo',
-        placeHolder: 'Enter Your Contact No',
-    },
-];
-
-const Form: FC<FormProps> = ({ formValues, setFormValues }) => {
+const Form: FC<FormProps> = ({ formValues, setFormValues, setFormErrors, formErrors }) => {
     return (
         <>
             {formFields.map(({ label, name, placeHolder }) => (
@@ -27,15 +15,17 @@ const Form: FC<FormProps> = ({ formValues, setFormValues }) => {
                     name={name}
                     type="text"
                     value={formValues[name]}
-                    onChange={(e) =>
+                    onChange={(e) => {
+                        handleValidate(formValues, setFormErrors);
                         setFormValues((prev) => ({
                             ...prev,
                             [name]: e.target.value,
-                        }))
-                    }
+                        }));
+                    }}
                     placeholder={placeHolder}
                     withIcon
                     className="mt-1"
+                    error={formErrors[name]}
                 />
             ))}
         </>
