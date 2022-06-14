@@ -1,12 +1,11 @@
 import { FC, useState } from 'react';
 import { FormContainerProps } from './types';
+import { IFormState } from 'app/kernel/types';
 import { Modal } from 'app/domains/Common/components/modal';
 import { Form } from 'app/domains/Common/components/form';
 
 const FormContainer: FC<FormContainerProps> = ({ showModal, toggle }) => {
-    const [formValues, setFormValues] = useState<{
-        [x: string]: string;
-    }>({
+    const [formValues, setFormValues] = useState<IFormState>({
         fullName: '',
         contactNo: '',
     });

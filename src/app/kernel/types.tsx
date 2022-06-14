@@ -3,3 +3,7 @@ export interface IContact {
     contactNo: string;
     id: string;
 }
+
+export interface IFormState {
+    [x: string]: string;
+}
