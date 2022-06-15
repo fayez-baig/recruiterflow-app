@@ -1,6 +1,15 @@
 export interface IContact {
-    id: string;
+    id?: string;
     fullName?: string;
+    designation?: string;
+}
+
+export interface IContactState {
+    [x: string]: IContact;
+}
+
+export interface QueryResult {
+    data: IContact[];
 }
 
 export interface IFormState {

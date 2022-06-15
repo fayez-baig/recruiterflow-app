@@ -4,4 +4,9 @@ export const formFields = [
         name: 'fullName',
         placeHolder: 'Enter Your Name',
     },
+    {
+        label: 'Designation',
+        name: 'designation',
+        placeHolder: 'Enter Your Designation',
+    },
 ];

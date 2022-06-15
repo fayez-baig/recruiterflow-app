@@ -6,7 +6,7 @@ import { LayoutContainer } from 'app/domains/Layout/containers/async';
 import * as serviceWorker from 'serviceWorkerRegistration';
 
 const queryCache = new QueryCache();
-const queryClient = new QueryClient({
+export const queryClient = new QueryClient({
     queryCache,
 });
 

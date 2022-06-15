@@ -1,7 +1,7 @@
 import { axiosInstance } from 'app/axios/axios-instance';
-import { IContact } from 'app/kernel/types';
+import { QueryResult, IContact } from 'app/kernel/types';
 
-const getContacts = async (): Promise<IContact[]> => await axiosInstance.get('contacts.json');
+const getContacts = async (): Promise<QueryResult> => await axiosInstance.get('contacts.json');
 
 const addContact = async (values: IContact): Promise<string> =>
     await axiosInstance.post(`contacts/${values.id}.json`, values);
